@@ -1,0 +1,33 @@
+####Loader
+
+
+const List = ({people}) => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+    setIsLoading(false)
+  },3000)
+  }, [])
+  
+  if (isLoading) {
+    return <CircularProgress style={{float:"center"}} />
+  }
+  
+  else {
+    return (
+    <>
+        {people.map(person => {
+          const {id,name,age,image} = person
+          return (
+            <div style={{display:"flex",gap:"10px"}}>
+              <p>{name}: </p>
+              <p>{age}</p>
+            </div>
+          );
+        })}
+      </>
+    )
+}
+
+  
+};

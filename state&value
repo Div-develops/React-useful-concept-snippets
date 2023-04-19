@@ -1,0 +1,13 @@
+  const handleChange = (e) => {
+    let { value } = e.target
+    console.log(value, instcredbalance, loanAmount)
+    setLoanAmount(prevState => value)
+    if (value < instcredbalance) {
+      setLoanMsg(prevState => "Wohoo! The amount you’ve entered is eligible for instant disbursal.")
+    }
+    if (value > instcredbalance) {
+      setLoanMsg(prevState => "The amount you’ve entered is more than your instant credit limit.")
+    }
+  }
+  
+  loan amount is not used here inside id,as that is upadating lately
